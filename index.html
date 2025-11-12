@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohith - AI/ML Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: #0a0a0a;
+            color: #00ff41;
+            overflow: hidden;
+            cursor: crosshair;
+        }
+
+        .slide-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            padding: 40px;
+        }
+
+        .slide.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide.prev {
+            transform: translateX(-100%);
+        }
+
+        .content {
+            max-width: 900px;
+            text-align: left;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #00ff41;
+            animation: glitch 3s infinite;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #fff;
+        }
+
+        p, li {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #ccc;
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            color: #00ff41;
+            font-weight: bold;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .skill-card {
+            background: rgba(0, 255, 65, 0.1);
+            border: 2px solid #00ff41;
+            padding: 20px;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #00ff41;
+        }
+
+        .nav-dots {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .dot.active {
+            background: #00ff41;
+            box-shadow: 0 0 10px #00ff41;
+        }
+
+        .arrow {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 3rem;
+            color: #00ff41;
+            cursor: pointer;
+            z-index: 1000;
+            opacity: 0.5;
+            transition: opacity 0.3s;
+            user-select: none;
+        }
+
+        .arrow:hover {
+            opacity: 1;
+        }
+
+        .arrow-left { left: 30px; }
+        .arrow-right { right: 30px; }
+
+        @keyframes glitch {
+            0%, 100% { text-shadow: 0 0 10px #00ff41; }
+            25% { text-shadow: -2px 0 10px #ff0000, 2px 0 10px #00ff41; }
+            50% { text-shadow: 2px 0 10px #0000ff, -2px 0 10px #00ff41; }
+            75% { text-shadow: 0 2px 10px #ffff00, 0 -2px 10px #00ff41; }
+        }
+
+        .terminal-prompt {
+            color: #00ff41;
+            margin-right: 10px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul li:before {
+            content: "→ ";
+            color: #00ff41;
+        }
+
+        .contact-link {
+            color: #00ff41;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .contact-link:hover {
+            border-bottom-color: #00ff41;
+        }
+
+        .glitch-text {
+            position: relative;
+            display: inline-block;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 1.8rem; }
+            p, li { font-size: 1rem; }
+            .arrow { font-size: 2rem; }
+            .arrow-left { left: 10px; }
+            .arrow-right { right: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- Slide 1: Intro -->
+        <div class="slide active">
+            <div class="content">
+                <h1 class="glitch-text">> Rohith_</h1>
+                <h2>AI/ML Engineer. Data Wrangler. Code Poet.</h2>
+                <p><span class="terminal-prompt">$</span> Building AI systems that <span class="highlight">actually work</span></p>
+                <p><span class="terminal-prompt">$</span> No corporate BS. Just clean code and neural nets.</p>
+                <p><span class="terminal-prompt">$</span> Currently making machines smarter @ Local Grown Salads</p>
+                <p style="margin-top: 30px; color: #888;">[ Swipe right or use arrows to explore ]</p>
+            </div>
+        </div>
+
+        <!-- Slide 2: What I Do -->
+        <div class="slide">
+            <div class="content">
+                <h2>// What I Actually Do</h2>
+                <ul>
+                    <li><span class="highlight">AI/ML Engineering:</span> PyTorch, TensorFlow, LLMs - the whole shebang</li>
+                    <li><span class="highlight">Data Engineering:</span> Building pipelines that don't break at 3 AM</li>
+                    <li><span class="highlight">Cloud Infrastructure:</span> Azure mostly, AWS/GCP when needed</li>
+                    <li><span class="highlight">GenAI:</span> LLMs, prompt engineering, making AI do cool stuff</li>
+                    <li><span class="highlight">Performance:</span> CUDA optimization, because slow code is sad code</li>
+                </ul>
+                <p style="margin-top: 30px; color: #888;">
+                    <span class="terminal-prompt">$</span> Master's in CS (4.0 GPA) from UNC Charlotte<br>
+                    <span class="terminal-prompt">$</span> Currently automating everything @ Local Grown Salads
+                </p>
+            </div>
+        </div>
+
+        <!-- Slide 3: Experience -->
+        <div class="slide">
+            <div class="content">
+                <h2>// Experience Log</h2>
+                <div style="margin-bottom: 30px;">
+                    <p><span class="highlight">Local Grown Salads</span> (Jan 2025 - Present)</p>
+                    <ul>
+                        <li>Built ML models that improved forecasting by 60%</li>
+                        <li>Deployed production-grade Python/C++ services on Linux</li>
+                        <li>Cut debugging time by 40% with AI-driven dashboards</li>
+                    </ul>
+                </div>
+                <div style="margin-bottom: 30px;">
+                    <p><span class="highlight">UNC Charlotte - AI/ML Engineer</span> (2023-2024)</p>
+                    <ul>
+                        <li>Optimized ML pipelines with CUDA parallelization</li>
+                        <li>Built scalable systems in PyTorch and JAX</li>
+                    </ul>
+                </div>
+                <div>
+                    <p><span class="highlight">Wissen Infotech</span> (2022-2023)</p>
+                    <ul>
+                        <li>Integrated LLMs, reduced manual work by 70%</li>
+                        <li>Cut Azure cloud costs by 60%</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Tech Stack -->
+        <div class="slide">
+            <div class="content">
+                <h2>// Tech Arsenal</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <strong>Languages</strong><br>
+                        Python, C++, Java<br>
+                        JavaScript, SQL, Go
+                    </div>
+                    <div class="skill-card">
+                        <strong>AI/ML</strong><br>
+                        PyTorch, TensorFlow<br>
+                        Hugging Face, LangChain
+                    </div>
+                    <div class="skill-card">
+                        <strong>Cloud</strong><br>
+                        Azure (primary)<br>
+                        AWS, GCP
+                    </div>
+                    <div class="skill-card">
+                        <strong>DevOps</strong><br>
+                        Docker, Kubernetes<br>
+                        CI/CD, Terraform
+                    </div>
+                    <div class="skill-card">
+                        <strong>Data</strong><br>
+                        SQL Server, MongoDB<br>
+                        Snowflake, ETL
+                    </div>
+                    <div class="skill-card">
+                        <strong>Frontend</strong><br>
+                        React, Angular<br>
+                        TypeScript, Figma
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Contact -->
+        <div class="slide">
+            <div class="content">
+                <h2>// Let's Build Something</h2>
+                <p style="font-size: 1.5rem; margin-top: 30px;">
+                    <span class="terminal-prompt">$</span> Email: <a href="mailto:saitejakumar02@gmail.com" class="contact-link">saitejakumar02@gmail.com</a>
+                </p>
+                <p style="font-size: 1.5rem;">
+                    <span class="terminal-prompt">$</span> Phone: <a href="tel:+19802242703" class="contact-link">+1 (980) 224-2703</a>
+                </p>
+                <p style="font-size: 1.5rem;">
+                    <span class="terminal-prompt">$</span> Location: <span class="highlight">Charlotte, NC</span>
+                </p>
+                <p style="margin-top: 50px; color: #888;">
+                    Open to AI/ML Engineering & Data Engineering roles.<br>
+                    Let's skip the small talk and build something that matters.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="arrow arrow-left" onclick="prevSlide()">‹</div>
+    <div class="arrow arrow-right" onclick="nextSlide()">›</div>
+    <div class="nav-dots">
+        <div class="dot active" onclick="goToSlide(0)"></div>
+        <div class="dot" onclick="goToSlide(1)"></div>
+        <div class="dot" onclick="goToSlide(2)"></div>
+        <div class="dot" onclick="goToSlide(3)"></div>
+        <div class="dot" onclick="goToSlide(4)"></div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active', 'prev');
+                if (i === index) {
+                    slide.classList.add('active');
+                } else if (i < index) {
+                    slide.classList.add('prev');
+                }
+            });
+
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            const next = (currentSlide + 1) % totalSlides;
+            showSlide(next);
+        }
+
+        function prevSlide() {
+            const prev = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(prev);
+        }
+
+        function goToSlide(index) {
+            showSlide(index);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+
+        // Touch swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) nextSlide();
+            if (touchEndX > touchStartX + 50) prevSlide();
+        }
+
+        // Mouse wheel navigation
+        let scrollTimeout;
+        document.addEventListener('wheel', (e) => {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                if (e.deltaY > 0) nextSlide();
+                if (e.deltaY < 0) prevSlide();
+            }, 50);
+        });
+    </script>
+</body>
+</html>
